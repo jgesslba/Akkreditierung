@@ -9,8 +9,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	var translateWidgets = function () {
 		
 		// Translate Widgets
-//		objTranslation.richTextUserName = translate("index", "richTextUserName");
-//		objTranslation.richTextPassword = translate("index", "richTextPassword");
+		objI18n.richTextUserName = translate("index", "richTextUserName");
+		objI18n.richTextPassword = translate("index", "richTextPassword");
 //		
 //		objTranslation.loginUserLabel = translate("index", "loginUserLabel");
 //		objTranslation.loginPasswordLabel = translate("index", "loginPasswordLabel");
@@ -22,7 +22,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 //		objTranslation.logoutText = translate("index", "logoutText");
 		
 		// Sync datasources
-		//WAF.sources.objTranslation.sync();
+		WAF.sources.objI18n.sync();
 		
 	};
 	
@@ -62,7 +62,17 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
-		// Add your code here
+		// Set session language for this user
+		language.setUserLanguageAsync({
+        	'onSuccess': function (result) {
+        		sessionStorage.setItem("language", result);
+				translateWidgets(); // Call the translation function for this page
+        	},  
+        	'onError': function (error) {
+         		console.log(error);
+           	},  
+            'params': [sessionStorage.getItem("language"),browserLanguage = browserLang = navigator.language || navigator.userLanguage]
+        });
 	};// @lock
 
 // @region eventManager// @startlock
