@@ -5,10 +5,10 @@
 
 #containerMain {
 	 z-index: 3;
-	 top: 0px;
-	 bottom: 0px;
+	 top: -4px;
+	 bottom: 4px;
 	 left: 0px;
-	 right: 0px;
+	 right: 18px;
 	
 	 position: absolute;
 	 
@@ -16,7 +16,7 @@
 
 #containerHeader {
 	 z-index: 1;
-	 width: 1066px;
+	 width: 1048px;
 	 height: 65px;
 	 top: 0px;
 	 left: 0px;
@@ -27,7 +27,7 @@
 
 #containerBody {
 	 z-index: 2;
-	 width: 1066px;
+	 width: 1048px;
 	 height: 749px;
 	 top: 65px;
 	 left: 0px;
@@ -40,32 +40,34 @@
 	 z-index: 1;
 	 width: 92px;
 	 height: 22px;
-	 top: 20px;
-	 right: 131px;
+	 top: 30px;
+	 right: 11px;
 	
 	 position: absolute;
 	 
 }
 
 #textFieldUserName {
-	 z-index: 3;
+	 z-index: 5;
 	 width: 130px;
 	 height: 22px;
-	 top: 21px;
-	 left: 670px;
+	 top: 30px;
+	 right: 269px;
 	
 	 position: absolute;
+	 text-align: right;
 	 
 }
 
-#richTextUserName {
-	 z-index: 4;
-	 width: 88px;
-	 height: 15px;
-	 top: 22px;
-	 left: 568px;
+#textFieldPassword {
+	 width: 130px;
+	 height: 22px;
+	 top: 30px;
+	 right: 121px;
 	
 	 position: absolute;
+	 text-align: right;
+	 z-index: 7;
 	 
 }
 
