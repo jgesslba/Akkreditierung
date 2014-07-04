@@ -2,15 +2,21 @@
 
 // ##### GET OR CREATE ORGANIZATIONAL GROUPS IN THE DIRECTORY #####
 
-var Gamehost = directory.group("Gamehost");
-if (Gamehost === null) {
-	var Gamehost = directory.addGroup("Gamehost" , "Gamehost group");
+var Sysadmin = directory.group("Sysadmin");
+if (Sysadmin === null) {
+	var Sysadmin = directory.addGroup("Sysadmin" , "Sysadmin group");
 	directory.save(); // save the organizational groups in the directory
 }
 		
-var Gameadmin = directory.group("Gameadmin"); // creates the group object
-if (Gameadmin === null) {
-	var Gameadmin = directory.addGroup("Gameadmin" , "Gameadmin group");
+var Member = directory.group("Member"); // creates the group object
+if (Member === null) {
+	var Member = directory.addGroup("Member" , "Member group");
+	directory.save(); // save the organizational groups in the directory
+}
+
+var User = directory.group("User"); // creates the group object
+if (User === null) {
+	var User = directory.addGroup("User" , "User group");
 	directory.save(); // save the organizational groups in the directory
 }
 	
