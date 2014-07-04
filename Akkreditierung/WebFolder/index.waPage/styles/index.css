@@ -60,7 +60,7 @@
 }
 
 #textFieldPassword {
-	 z-index: 7;
+	 z-index: 6;
 	 width: 130px;
 	 height: 22px;
 	 top: 30px;
@@ -72,7 +72,7 @@
 }
 
 #richTextUserName {
-	 z-index: 8;
+	 z-index: 7;
 	 width: 130px;
 	 height: 16px;
 	 top: 10px;
@@ -83,7 +83,7 @@
 }
 
 #richTextPassword {
-	 z-index: 9;
+	 z-index: 8;
 	 width: 130px;
 	 height: 16px;
 	 top: 10px;
@@ -94,7 +94,7 @@
 }
 
 #iconAustrian {
-	 z-index: 10;
+	 z-index: 9;
 	 width: 16px;
 	 height: 11px;
 	 top: 13px;
@@ -105,13 +105,13 @@
 }
 
 #iconEnglish {
-	 z-index: 3;
 	 width: 16px;
 	 height: 11px;
 	 top: 13px;
-	 right: 10px;
+	 right: 12px;
 	
 	 position: absolute;
+	 z-index: 10;
 	 
 }
 
