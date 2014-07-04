@@ -3,17 +3,6 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
-#label1 {
-	 z-index: 3;
-	 width: 31px;
-	 height: 15px;
-	 top: 21px;
-	 left: 433px;
-	
-	 position: absolute;
-	 
-}
-
 #containerMain {
 	 z-index: 3;
 	 top: 0px;
@@ -27,7 +16,7 @@
 
 #containerHeader {
 	 z-index: 1;
-	 width: 1064px;
+	 width: 1066px;
 	 height: 65px;
 	 top: 0px;
 	 left: 0px;
@@ -38,8 +27,8 @@
 
 #containerBody {
 	 z-index: 2;
-	 width: 1064px;
-	 height: 747px;
+	 width: 1066px;
+	 height: 749px;
 	 top: 65px;
 	 left: 0px;
 	
@@ -62,8 +51,19 @@
 	 z-index: 3;
 	 width: 130px;
 	 height: 22px;
-	 top: 18px;
-	 left: 469px;
+	 top: 21px;
+	 left: 670px;
+	
+	 position: absolute;
+	 
+}
+
+#richTextUserName {
+	 z-index: 4;
+	 width: 88px;
+	 height: 15px;
+	 top: 22px;
+	 left: 568px;
 	
 	 position: absolute;
 	 
