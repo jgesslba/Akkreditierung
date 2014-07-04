@@ -1,4 +1,4 @@
-﻿
+
 (function Component (id) {// @lock
 
 // Add the code that needs to be shared between components here
@@ -12,28 +12,8 @@ function constructor (id) {
 
 	this.load = function (data) {// @lock
 		
-		// Set session language for this user
-		language.setUserLanguageAsync({
-        	'onSuccess': function (result) {
-        		sessionStorage.setItem("language", result);
-				translateWidgets(); // Call the translation function for this page
-        	},  
-        	'onError': function (error) {
-         		console.log(error);
-           	},  
-            'params': [sessionStorage.getItem("language"),browserLanguage = browserLang = navigator.language || navigator.userLanguage]
-        });
-
-	// @region namespaceDeclaration// @startlock
-	var iconEnglish = {};	// @icon
-	var iconAustrian = {};	// @icon
-	var textFieldPassword = {};	// @textField
-	var textFieldUserName = {};	// @textField
-	var buttonLogin = {};	// @button
-	// @endregion// @endlock
-
-// Translate
-	var translateWidgets = function () {
+		// Translate
+		var translateWidgets = function () {
 		
 		// Translate Widgets
 		$comp.sourcesVar.objI18n.richTextUserName = translate("index", "richTextUserName");
@@ -49,44 +29,67 @@ function constructor (id) {
 		
 		// Remove error messages and error divs
 		$$(getHtmlId("textFieldUserName")).removeClass('errorTextField');
-		$(getHtmlId("#textFieldUserName")).attr('placeholder', '');
+		$("#" + getHtmlId("textFieldUserName")).attr('placeholder', '');
 		$$(getHtmlId("textFieldPassword")).removeClass('errorTextField');
-		$(getHtmlId("#textFieldPassword")).attr('placeholder', '');
+		$("#" + getHtmlId("textFieldPassword")).attr('placeholder', '');
 		
-	};
+		};
+		
+		// Set session language for this user
+		language.setUserLanguageAsync({
+        	'onSuccess': function (result) {
+        		sessionStorage.setItem("language", result);
+				translateWidgets(); // Call the translation function for this page
+        	},  
+        	'onError': function (error) {
+         		console.log(error);
+           	},  
+            'params': [sessionStorage.getItem("language"),browserLanguage = browserLang = navigator.language || navigator.userLanguage]
+        });
+        
+        // Login
+		function signIn() {
+			// Hash userName and password
+			var hash = CryptoJS.MD5($comp.sourcesVar.varUserName + ':Wakanda:' + $comp.sourcesVar.varPassword).toString();
+		
+			// Authentication
+			if (WAF.directory.loginByKey($comp.sourcesVar.varUserName, hash)) { // The authentication was successful
+				$comp.sourcesVar.varCurrentUser = WAF.directory.currentUser(); // The currentUser is stored in the variable
+				$comp.sourcesVar.varUserName = ""; // Empty varUserName
+				$comp.sourcesVar.varPassword = ""; // Empty varPassword
+				// Show components logged in
+				$$("componentHeader").loadComponent("/Components/LogoutHeader.waComponent");
+			} else { // The authentication was not successful
 	
-	// Login
-	function signIn() {
-		// Hash userName and password
-		var hash = CryptoJS.MD5($comp.sourcesVar.varUserName + ':Wakanda:' + $comp.sourcesVar.varPassword).toString();
-		
-		// Authentication
-		if (WAF.directory.loginByKey($comp.sourcesVar.varUserName, hash)) { // The authentication was successful
-			$comp.sourcesVar.varCurrentUser = WAF.directory.currentUser(); // The currentUser is stored in the variable
-			$comp.sourcesVar.varUserName = ""; // Empty varUserName
-			$comp.sourcesVar.varPassword = ""; // Empty varPassword
-			// Show components logged in
-			$$("componentHeader").loadComponent("/Components/LogoutHeader.waComponent");
-		} else { // The authentication was not successful
-	
-			// Empty the local variables
-			$comp.sourcesVar.varCurrentUser = ""; // Empty varCurrentUser
-			$comp.sourcesVar.varUserName = ""; // Empty varUserName
-			$comp.sourcesVar.varPassword = ""; // Empty varPassword
+				// Empty the local variables
+				$comp.sourcesVar.varCurrentUser = ""; // Empty varCurrentUser
+				$comp.sourcesVar.varUserName = ""; // Empty varUserName
+				$comp.sourcesVar.varPassword = ""; // Empty varPassword
 			
-			// Sync the widgets with the empty variables
-			$comp.sources.varUserName.sync(); // Clear the txtUserName field
-			$comp.sources.varPassword.sync(); // Clear the txtPassword field
-			$comp.sources.varCurrentUser.sync();
+				// Sync the widgets with the empty variables
+				$comp.sources.varUserName.sync(); // Clear the txtUserName field
+				$comp.sources.varPassword.sync(); // Clear the txtPassword field
+				$comp.sources.varCurrentUser.sync();
 		
-			// Set the error message in the username input placeholder
-			$(getHtmlId("#textFieldUserName")).attr("placeholder", $comp.sourcesVar.objI18n.errorMessageLoginFailed);
+				// Set the error message in the username input placeholder
+				$("#" + getHtmlId("textFieldUserName")).attr("placeholder", $comp.sourcesVar.objI18n.errorMessageLoginFailed);
 			
-			// Add errorTextField class to inform the user something goes wrong
-			$$(getHtmlId("textFieldUserName")).addClass("errorTextField");
-		}
-	};
+				// Add errorTextField class to inform the user something goes wrong
+				$$(getHtmlId("textFieldUserName")).addClass("errorTextField");
+			}
+		};
 
+
+	// @region namespaceDeclaration// @startlock
+	var iconEnglish = {};	// @icon
+	var iconAustrian = {};	// @icon
+	var textFieldPassword = {};	// @textField
+	var textFieldUserName = {};	// @textField
+	var buttonLogin = {};	// @button
+	// @endregion// @endlock
+
+	
+	
 	// eventHandlers// @lock
 
 	iconEnglish.click = function iconEnglish_click (event)// @startlock
@@ -140,7 +143,7 @@ function constructor (id) {
 	{// @endlock
 		// Remove added error class
 		this.removeClass("errorTextField");
-		$(getHtmlId("#textFieldPassword")).attr("placeholder", "");
+		$("#" + getHtmlId("textFieldPassword")).attr("placeholder", "");
 	};// @lock
 
 	textFieldPassword.blur = function textFieldPassword_blur (event)// @startlock
@@ -148,7 +151,7 @@ function constructor (id) {
 		// Error handling
 		if (this.getValue() == "") {
 			this.addClass("errorTextField"); // Add css class for errorTextField
-			$(getHtmlId("#textFieldPassword")).attr("placeholder", $comp.sourcesVar.objI18n.errorMessageRequired);
+			$("#" + getHtmlId("textFieldPassword")).attr("placeholder", $comp.sourcesVar.objI18n.errorMessageRequired);
 		}
 	};// @lock
 
@@ -173,7 +176,7 @@ function constructor (id) {
 	{// @endlock
 		// Remove added error class
 		this.removeClass("errorTextField");
-		$(getHtmlId("#textFieldUserName")).attr("placeholder", "");
+		$("#" + getHtmlId("textFieldUserName")).attr("placeholder", "");
 	};// @lock
 
 	textFieldUserName.blur = function textFieldUserName_blur (event)// @startlock
@@ -181,7 +184,7 @@ function constructor (id) {
 		// Error handling
 		if (this.getValue() == "") {
 			this.addClass("errorTextField"); // Add css class for errorTextField
-			$(getHtmlId("#textFieldUserName")).attr("placeholder", $comp.sourcesVar.objI18n.errorMessageRequired);
+			$("#" + getHtmlId("textFieldUserName")).attr("placeholder", $comp.sourcesVar.objI18n.errorMessageRequired);
 		}
 	};// @lock
 
