@@ -3,100 +3,12 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
-#img7 {
-	 z-index: 0;
-	 width: 0px;
-	 height: 0px;
-	 top: auto;
-	 left: auto;
-	
-	 position: absolute;
-	 
-}
-
-#img6 {
-	 z-index: 0;
-	 width: 0px;
-	 height: 0px;
-	 top: auto;
-	 left: auto;
-	
-	 position: absolute;
-	 
-}
-
-#img5 {
-	 z-index: 0;
-	 width: 0px;
-	 height: 0px;
-	 top: auto;
-	 left: auto;
-	
-	 position: absolute;
-	 
-}
-
-#img4 {
-	 z-index: 0;
-	 width: 0px;
-	 height: 0px;
-	 top: auto;
-	 left: auto;
-	
-	 position: absolute;
-	 
-}
-
-#img3 {
-	 z-index: 0;
-	 width: 0px;
-	 height: 0px;
-	 top: auto;
-	 left: auto;
-	
-	 position: absolute;
-	 
-}
-
-#img2 {
-	 z-index: 0;
-	 width: 0px;
-	 height: 0px;
-	 top: auto;
-	 left: auto;
-	
-	 position: absolute;
-	 
-}
-
-#img1 {
-	 z-index: 0;
-	 width: 0px;
-	 height: 0px;
-	 top: auto;
-	 left: auto;
-	
-	 position: absolute;
-	 
-}
-
-#img {
-	 z-index: 0;
-	 width: 0px;
-	 height: 0px;
-	 top: auto;
-	 left: auto;
-	
-	 position: absolute;
-	 
-}
-
 #containerMain {
 	 z-index: 3;
-	 top: -4px;
-	 bottom: 4px;
+	 top: 0px;
+	 bottom: 0px;
 	 left: 0px;
-	 right: 18px;
+	 right: 0px;
 	
 	 position: absolute;
 	 
@@ -104,7 +16,7 @@
 
 #containerHeader {
 	 z-index: 1;
-	 width: 1048px;
+	 width: 1064px;
 	 height: 65px;
 	 top: 0px;
 	 left: 0px;
@@ -115,8 +27,8 @@
 
 #containerBody {
 	 z-index: 2;
-	 width: 1048px;
-	 height: 749px;
+	 width: 1064px;
+	 height: 747px;
 	 top: 65px;
 	 left: 0px;
 	
@@ -124,83 +36,13 @@
 	 
 }
 
-#buttonLogin {
-	 z-index: 1;
-	 width: 92px;
-	 height: 22px;
-	 top: 30px;
-	 right: 11px;
+#componentHeader {
+	 z-index: 11;
+	 top: 0px;
+	 bottom: 0px;
+	 left: 0px;
+	 right: 0px;
 	
-	 position: absolute;
-	 
-}
-
-#textFieldUserName {
-	 z-index: 5;
-	 width: 130px;
-	 height: 22px;
-	 top: 30px;
-	 right: 269px;
-	
-	 position: absolute;
-	 text-align: left;
-	 
-}
-
-#textFieldPassword {
-	 z-index: 6;
-	 width: 130px;
-	 height: 22px;
-	 top: 30px;
-	 right: 121px;
-	
-	 position: absolute;
-	 text-align: left;
-	 
-}
-
-#richTextUserName {
-	 z-index: 7;
-	 width: 130px;
-	 height: 16px;
-	 top: 10px;
-	 right: 269px;
-	
-	 position: absolute;
-	 
-}
-
-#richTextPassword {
-	 z-index: 8;
-	 width: 130px;
-	 height: 16px;
-	 top: 10px;
-	 right: 121px;
-	
-	 position: absolute;
-	 
-}
-
-#iconAustrian {
-	 z-index: 9;
-	 width: 16px;
-	 height: 11px;
-	 top: 13px;
-	 right: 33px;
-	
-	 cursor: pointer;
-	 position: absolute;
-	 
-}
-
-#iconEnglish {
-	 z-index: 10;
-	 width: 16px;
-	 height: 11px;
-	 top: 13px;
-	 right: 12px;
-	
-	 cursor: pointer;
 	 position: absolute;
 	 
 }

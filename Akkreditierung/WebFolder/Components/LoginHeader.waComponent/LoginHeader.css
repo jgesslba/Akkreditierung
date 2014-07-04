@@ -3,7 +3,96 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
+#{id}img7 {
+	 z-index: 0;
+	 width: 0px;
+	 height: 0px;
+	 top: auto;
+	 left: auto;
+	
+	 position: absolute;
+	 
+}
+
+#{id}img6 {
+	 z-index: 0;
+	 width: 0px;
+	 height: 0px;
+	 top: auto;
+	 left: auto;
+	
+	 position: absolute;
+	 
+}
+
+#{id}img5 {
+	 z-index: 0;
+	 width: 0px;
+	 height: 0px;
+	 top: auto;
+	 left: auto;
+	
+	 position: absolute;
+	 
+}
+
+#{id}img4 {
+	 z-index: 0;
+	 width: 0px;
+	 height: 0px;
+	 top: auto;
+	 left: auto;
+	
+	 position: absolute;
+	 
+}
+
+#{id}img3 {
+	 z-index: 0;
+	 width: 0px;
+	 height: 0px;
+	 top: auto;
+	 left: auto;
+	
+	 position: absolute;
+	 
+}
+
+#{id}img2 {
+	 z-index: 0;
+	 width: 0px;
+	 height: 0px;
+	 top: auto;
+	 left: auto;
+	
+	 position: absolute;
+	 
+}
+
+#{id}img1 {
+	 z-index: 0;
+	 width: 0px;
+	 height: 0px;
+	 top: auto;
+	 left: auto;
+	
+	 position: absolute;
+	 
+}
+
+#{id}img {
+	 z-index: 0;
+	 width: 0px;
+	 height: 0px;
+	 top: auto;
+	 left: auto;
+	
+	 position: absolute;
+	 
+}
+
 #{id}iconEnglish {
+	 z-index: 10;
 	 width: 16px;
 	 height: 11px;
 	 top: 13px;
@@ -11,11 +100,11 @@
 	
 	 cursor: pointer;
 	 position: absolute;
-	 z-index: 10;
 	 
 }
 
 #{id}iconAustrian {
+	 z-index: 9;
 	 width: 16px;
 	 height: 11px;
 	 top: 13px;
@@ -23,33 +112,33 @@
 	
 	 cursor: pointer;
 	 position: absolute;
-	 z-index: 9;
 	 
 }
 
 #{id}richTextPassword {
+	 z-index: 8;
 	 width: 130px;
 	 height: 16px;
 	 top: 10px;
 	 right: 121px;
 	
 	 position: absolute;
-	 z-index: 8;
 	 
 }
 
 #{id}richTextUserName {
+	 z-index: 7;
 	 width: 130px;
 	 height: 16px;
 	 top: 10px;
 	 right: 269px;
 	
 	 position: absolute;
-	 z-index: 7;
 	 
 }
 
 #{id}textFieldPassword {
+	 z-index: 6;
 	 width: 130px;
 	 height: 22px;
 	 top: 30px;
@@ -57,11 +146,11 @@
 	
 	 position: absolute;
 	 text-align: left;
-	 z-index: 6;
 	 
 }
 
 #{id}textFieldUserName {
+	 z-index: 5;
 	 width: 130px;
 	 height: 22px;
 	 top: 30px;
@@ -69,18 +158,17 @@
 	
 	 position: absolute;
 	 text-align: left;
-	 z-index: 5;
 	 
 }
 
 #{id}buttonLogin {
+	 z-index: 4;
 	 width: 92px;
 	 height: 22px;
 	 top: 30px;
 	 right: 11px;
 	
 	 position: absolute;
-	 z-index: 4;
 	 
 }
 
