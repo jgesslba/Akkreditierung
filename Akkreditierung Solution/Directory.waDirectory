@@ -1,4 +1,1 @@
-﻿<?xml version="1.0" encoding="UTF-8"?><directory>
-	<group ID="01000000000000000000000000000000" name="Admin">	</group>
-	<user ID="7ECB040393994C4799F83DE153E01E06" name="sysadmin" fullName="System Administrator" password="f7fb40241bf9a9071b5ee6cc0fc363f6"/>
-</directory>
+<?xml version="1.0" encoding="utf-8"?><directory><user name="sysadmin" ID="7ECB040393994C4799F83DE153E01E06" fullName="System Administrator" password="f7fb40241bf9a9071b5ee6cc0fc363f6"/><group name="Admin" ID="01000000000000000000000000000000" fullName="Admin"/><group name="Sysadmin" ID="F2AE3A2EF5181E44BCB9903684A87857" fullName="Sysadmin group"/><group name="Member" ID="5D0A3AF36627D2478B48BD6988B61D33" fullName="Member group"/><group name="User" ID="7D4A58BC05EFE34F959F1C769A4F8AFE" fullName="User group"/><group name="Game_Read" ID="6CCD7747AE600149BD400F426E991D76" fullName="Game_Read group"/></directory>
