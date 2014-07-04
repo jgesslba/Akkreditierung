@@ -16,9 +16,11 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		// Translate Widgets
 		objI18n.richTextUserName = translate("index", "richTextUserName");
 		objI18n.richTextPassword = translate("index", "richTextPassword");
+		objI18n.errorMessageRequired = translate("index", "errorMessageRequired");
+		objI18n.errorMessageLoginFailed = translate("index", "errorMessageLoginFailed");
 		
 		// Translate Button
-		$$("buttonLogin").setValue(objI18n.buttonLogin);
+		$$("buttonLogin").setValue(translate("index", "buttonLogin"));
 		
 		// Sync datasources
 		WAF.sources.objI18n.sync();

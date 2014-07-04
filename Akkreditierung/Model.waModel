@@ -1,188 +1,244 @@
-﻿{
-	"toJSON": true,
-	"extraProperties": {
-		"version": "2",
-		"classes": {
-			"User": {
-				"panel": {
-					"isOpen": "true",
-					"position": {
-						"X": 25,
-						"Y": 20
+
+{
+	"toJSON" : true,
+	"extraProperties" : 
+	{
+		"version" : "2",
+		"classes" : 
+		{
+			"User" : 
+			{
+				"panelColor" : "#CCC1D9",
+				"panel" : 
+				{
+					"isOpen" : "true",
+					"position" : 
+					{
+						"X" : 25,
+						"Y" : 20
 					}
-				},
-				"panelColor": "#CCC1D9"
+				}
 			},
-			"Country": {
-				"panel": {
-					"isOpen": "true",
-					"position": {
-						"X": 332,
-						"Y": 23
+			"Country" : 
+			{
+				"panelColor" : "#B2A2C7",
+				"panel" : 
+				{
+					"isOpen" : "true",
+					"position" : 
+					{
+						"X" : 332,
+						"Y" : 23
 					}
-				},
-				"panelColor": "#B2A2C7"
+				}
 			}
 		},
-		"model": {
-			"scriptMode": "manual",
-			"workspaceLeft": 0,
-			"workspaceTop": 0
+		"model" : 
+		{
+			"scriptMode" : "manual",
+			"workspaceLeft" : 0,
+			"workspaceTop" : 0
 		}
 	},
-	"dataClasses": [
+	"dataClasses" : 
+	[
 		{
-			"name": "Country",
-			"className": "Country",
-			"collectionName": "CountryCollection",
-			"scope": "publicOnServer",
-			"attributes": [
+			"name" : "Country",
+			"className" : "Country",
+			"collectionName" : "CountryCollection",
+			"scope" : "publicOnServer",
+			"attributes" : 
+			[
 				{
-					"name": "ID",
-					"kind": "storage",
-					"scope": "public",
-					"unique": true,
-					"autosequence": true,
-					"type": "long",
-					"indexKind": "btree",
-					"primKey": true
+					"name" : "ID",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"unique" : true,
+					"autosequence" : true,
+					"type" : "long",
+					"indexKind" : "btree"
 				},
 				{
-					"name": "name",
-					"kind": "storage",
-					"scope": "public",
-					"not_null": true,
-					"type": "string"
+					"name" : "name",
+					"kind" : "storage",
+					"scope" : "public",
+					"not_null" : true,
+					"type" : "string"
 				},
 				{
-					"name": "iso",
-					"kind": "storage",
-					"scope": "public",
-					"unique": true,
-					"not_null": true,
-					"type": "string"
+					"name" : "iso",
+					"kind" : "storage",
+					"scope" : "public",
+					"unique" : true,
+					"not_null" : true,
+					"type" : "string",
+					"events" : 
+					[
+						{
+							"kind" : "onSet",
+							"from" : "model.Country.iso.events.onSet",
+							"userDefined" : true
+						}
+					]
 				},
 				{
-					"name": "flag",
-					"kind": "storage",
-					"scope": "public",
-					"type": "image"
+					"name" : "flag",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "image"
 				},
 				{
-					"name": "userCollection",
-					"kind": "relatedEntities",
-					"scope": "public",
-					"type": "UserCollection",
-					"reversePath": true,
-					"path": "country"
+					"name" : "userCollection",
+					"kind" : "relatedEntities",
+					"scope" : "public",
+					"type" : "UserCollection",
+					"reversePath" : true,
+					"path" : "country"
+				}
+			],
+			"key" : 
+			[
+				{
+					"name" : "ID"
 				}
 			]
 		},
 		{
-			"name": "User",
-			"className": "User",
-			"collectionName": "UserCollection",
-			"scope": "publicOnServer",
-			"attributes": [
+			"name" : "User",
+			"className" : "User",
+			"collectionName" : "UserCollection",
+			"scope" : "publicOnServer",
+			"attributes" : 
+			[
 				{
-					"name": "ID",
-					"kind": "storage",
-					"scope": "public",
-					"unique": true,
-					"autosequence": true,
-					"autogenerate": true,
-					"type": "uuid",
-					"indexKind": "btree",
-					"primKey": true
+					"name" : "ID",
+					"kind" : "storage",
+					"scope" : "public",
+					"indexed" : true,
+					"unique" : true,
+					"autosequence" : true,
+					"autogenerate" : true,
+					"type" : "uuid",
+					"indexKind" : "btree"
 				},
 				{
-					"name": "firstName",
-					"kind": "storage",
-					"scope": "public",
-					"not_null": true,
-					"type": "string"
+					"name" : "firstName",
+					"kind" : "storage",
+					"scope" : "public",
+					"not_null" : true,
+					"type" : "string"
 				},
 				{
-					"name": "lastName",
-					"kind": "storage",
-					"scope": "public",
-					"not_null": true,
-					"type": "string"
+					"name" : "lastName",
+					"kind" : "storage",
+					"scope" : "public",
+					"not_null" : true,
+					"type" : "string"
 				},
 				{
-					"name": "fullName",
-					"kind": "calculated",
-					"scope": "public",
-					"type": "string",
-					"scriptKind": "javascript"
+					"name" : "fullName",
+					"kind" : "calculated",
+					"scope" : "public",
+					"type" : "string",
+					"scriptKind" : "javascript",
+					"onGet" : 
+					[
+						{
+							"from" : "model.User.fullName.onGet",
+							"userDefined" : true
+						}
+					]
 				},
 				{
-					"name": "gender",
-					"kind": "storage",
-					"scope": "public",
-					"limiting_length": 1,
-					"not_null": true,
-					"type": "string",
-					"fixedLength": 1,
-					"minLength": 1,
-					"maxLength": 1
+					"name" : "gender",
+					"kind" : "storage",
+					"scope" : "public",
+					"limiting_length" : 1,
+					"not_null" : true,
+					"type" : "string",
+					"fixedLength" : 1,
+					"minLength" : 1,
+					"maxLength" : 1
 				},
 				{
-					"name": "photo",
-					"kind": "storage",
-					"scope": "public",
-					"type": "image"
+					"name" : "photo",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "image",
+					"events" : 
+					[
+						{
+							"kind" : "onRemove",
+							"from" : "model.User.photo.events.onRemove",
+							"userDefined" : true
+						}
+					]
 				},
 				{
-					"name": "userName",
-					"kind": "storage",
-					"scope": "public",
-					"unique": true,
-					"not_null": true,
-					"type": "string",
-					"identifying": true
+					"name" : "userName",
+					"kind" : "storage",
+					"scope" : "public",
+					"unique" : true,
+					"not_null" : true,
+					"type" : "string",
+					"identifying" : true
 				},
 				{
-					"name": "password",
-					"kind": "storage",
-					"scope": "public",
-					"not_null": true,
-					"type": "string"
+					"name" : "password",
+					"kind" : "storage",
+					"scope" : "public",
+					"not_null" : true,
+					"type" : "string"
 				},
 				{
-					"name": "email",
-					"kind": "storage",
-					"scope": "public",
-					"unique": true,
-					"not_null": true,
-					"type": "string",
-					"identifying": true
+					"name" : "email",
+					"kind" : "storage",
+					"scope" : "public",
+					"unique" : true,
+					"not_null" : true,
+					"type" : "string",
+					"identifying" : true
 				},
 				{
-					"name": "phone",
-					"kind": "storage",
-					"scope": "public",
-					"type": "string"
+					"name" : "phone",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "string"
 				},
 				{
-					"name": "country",
-					"kind": "relatedEntity",
-					"scope": "public",
-					"type": "Country",
-					"path": "Country"
+					"name" : "country",
+					"kind" : "relatedEntity",
+					"scope" : "public",
+					"type" : "Country",
+					"path" : "Country"
 				},
 				{
-					"name": "role",
-					"kind": "storage",
-					"scope": "public",
-					"not_null": true,
-					"type": "string"
+					"name" : "role",
+					"kind" : "storage",
+					"scope" : "public",
+					"not_null" : true,
+					"type" : "string"
 				},
 				{
-					"name": "avatarPhoto",
-					"kind": "storage",
-					"scope": "public",
-					"type": "bool"
+					"name" : "avatarPhoto",
+					"kind" : "storage",
+					"scope" : "public",
+					"type" : "bool"
+				}
+			],
+			"events" : 
+			[
+				{
+					"kind" : "onSave",
+					"from" : "model.User.events.onSave",
+					"userDefined" : true
+				}
+			],
+			"key" : 
+			[
+				{
+					"name" : "ID"
 				}
 			]
 		}
