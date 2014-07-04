@@ -99,7 +99,7 @@
 	 height: 11px;
 	 top: 13px;
 	 right: 33px;
-	
+	 cursor: pointer;
 	 position: absolute;
 	 
 }
@@ -109,7 +109,7 @@
 	 height: 11px;
 	 top: 13px;
 	 right: 12px;
-	
+	 cursor: pointer;
 	 position: absolute;
 	 z-index: 10;
 	 
