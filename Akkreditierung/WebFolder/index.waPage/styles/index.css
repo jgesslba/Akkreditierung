@@ -95,10 +95,21 @@
 
 #iconAustrian {
 	 z-index: 10;
-	 width: 24px;
-	 height: 24px;
-	 top: 6px;
-	 left: 930px;
+	 width: 16px;
+	 height: 11px;
+	 top: 13px;
+	 right: 33px;
+	
+	 position: absolute;
+	 
+}
+
+#iconEnglish {
+	 z-index: 3;
+	 width: 16px;
+	 height: 11px;
+	 top: 13px;
+	 right: 10px;
 	
 	 position: absolute;
 	 
